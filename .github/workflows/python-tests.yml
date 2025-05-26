@@ -28,3 +28,11 @@ jobs:
       - name: Run tests
         run: |
           PYTHONPATH=src python -m unittest discover -s tests
+          
+      - name: Debug Python environment
+        run: |
+          echo "== Python packages installed =="
+          pip list
+          echo "== Test runner location =="
+          which pytest || echo "pytest not found"
+          which unittest || echo "unittest not found"
